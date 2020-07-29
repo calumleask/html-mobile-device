@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <script src="js/html-device.js"></script>
+    <style>
+      body {
+        background-color: white;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        margin: 0;
+        overflow: auto;
+      }
+      .container {
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="device-container"></div>
+    <div class="container" id="device-controls"></div>
+    <script type="text/javascript">
+      const device = new HTMLDevice.Device();
+      device.init({
+        parent: "device-container",
+        deviceName: "iPhone SE",
+        debugControls: "device-controls",
+        start: (deviceHandle) => {
+          console.log("Start");
+          console.log("Device: " + deviceHandle.getDeviceName());
+          console.log("Width: " + deviceHandle.getScreenProperties().width + "px");
+          console.log("Height: " + deviceHandle.getScreenProperties().height + "px");
+        },
+        stop: (deviceHandle) => {
+          console.log("Stop");
+        }
+      });
+    </script>
+  </body>
+</html>

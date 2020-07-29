@@ -1,0 +1,22 @@
+
+.device {
+	background-color: black;
+	border: solid 1px silver;
+	border-radius: 40px;
+	padding: 20px;
+	text-align: center;
+}
+
+.device.portrait {
+	padding: 40px 20px;
+}
+
+.device.landscape {
+	padding: 20px 40px;
+}
+
+.device-screen {
+    background-color: white;
+	margin: 0;
+	overflow: hidden;
+}
